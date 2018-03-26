@@ -1,0 +1,74 @@
+/*reset*/
+
+body{
+margin: 0px;
+padding: 0px;
+font-family: arial;
+background-image: url(image/hacker.jpg);
+
+}
+
+/*formulaire*/
+
+h1{
+	font-family: arial;
+	font-size: 40px;
+	margin-bottom: 50px;
+	margin-left: 20px;
+	text-decoration: underline;
+	color: white;
+	text-align: center;
+}
+
+#myForm{
+	display: inline-block;
+	border: green solid 3px;
+	margin-left: 20px;
+	padding: 20px;
+	background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(180, 180, 180));
+
+}
+input{
+	margin-left: 10px;
+	margin-bottom: 20px;
+
+}
+
+label{
+	margin-left: 30px;
+}
+
+.nom{
+	text-decoration: underline;
+}
+
+.input-nom{
+	margin-left: 35px;
+}
+
+.prenom{
+	text-decoration: underline;
+}
+
+.element{
+	margin: 30px;
+	padding: 10px;
+	display: inline-block;
+	border: green solid 2px;
+}
+
+.email{
+	text-decoration: underline;
+	margin-left: 30px;
+}
+
+.message{
+	text-decoration: underline;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+.contact{
+	width: 300px;
+	margin-left: 30px;
+}

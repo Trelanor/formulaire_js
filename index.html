@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+	<html lang="fr">
+		<head>
+			<title>formulaire JavaScript</title>
+			<meta charset="utf-8"/>
+			<link rel="stylesheet" href="style.css">
+			
+		</head>
+		
+		<body>
+			<h1>Formulaire de contact</h1>
+			<form method="post" id="myForm" name="formulaire_js" onsubmit="return(validate());">
+				
+				<label class="nom">Votre nom:</label>
+				<input type="text" name="nom" id="nom" class="input-nom" size="30"/><br>
+				
+				<label class="prenom">Votre Prénom:</label>
+				<input type="text" name="prenom" id="prenom" size="30"/><br>
+				
+				<div class ="element">
+					<div>
+						<p>Civilité :</p>
+						<input type="radio" id="contactChoice1" name="genre" value="monsieur">
+						<label for="contactChoice1">Monsieur</label>
+						<input type="radio" id="contactChoice2" name="genre" value="madame">
+						<label for="contactChoice2">Madame</label>
+					</div>
+				</div><br>
+				
+				<label class="email">Votre E-mail:</label>
+				<input type="text" name="email" id="email" size="50" onclick="validateEmail"/><br>
+				
+				<label class="message">Votre message:</label>
+				<textarea id="message" name="textarea" rows="10" cols="50"></textarea>
+				<br>
+				
+				<select name="contact" id="contact" class="contact">
+					<option value="none">Sélectionner votre type de contact:</option>
+					<option value="pro">Professionel</option>
+					<option value="perso">Personnel</option>
+				</select>
+				
+				<input type='submit' value='valider' id='bouton_envoi'>
+			</form>
+			
+			<script>
+				//fonction pour valider
+				function validate()
+				
+				{
+				//if = si la zone de texte nom est vide dans le formulaire qui se trouve sur page
+					if(document.formulaire_js.nom.value=="")
+					{
+						//il faut afficher une alert qui affichera "insérer votre nom"
+						alert("Insérer votre nom !");
+						//cible l'élément où il manque des données pour mettre le curseur dans le champ
+						document.formulaire_js.nom.focus();
+						//changer la couleur du champs lors d'une erreur dans la partie nom du formulaire
+						document.formulaire_js.nom.style.backgroundColor = "orange";
+						//changer la couleur de border du champ nom du formulaire de cette page
+						document.formulaire_js.nom.style.borderColor = "red";
+						//il ne faut pas envoyer le formulaire qui se trouve sur la page
+						return false;
+					}
+					
+					if(document.formulaire_js.prenom.value=="")
+					{
+						alert("Insérer votre Prénom !");
+						document.formulaire_js.prenom.focus();
+						document.formulaire_js.prenom.style.backgroundColor = "orange";
+						document.formulaire_js.prenom.style.borderColor = "red";
+						return false;
+					}
+					
+					if(document.formulaire_js.genre.value=="")
+					{
+						alert("quelle est votre civilité ?");
+						return false;
+					}
+					
+					if(document.formulaire_js.email.value=="")
+					{
+						alert("Insérer votre e-mail !");
+						document.formulaire_js.email.focus();
+						document.formulaire_js.email.style.backgroundColor = "orange";
+						document.formulaire_js.email.style.borderColor = "red";
+						return false;
+					}
+					
+					if(document.formulaire_js.contact.value=="none")
+					{
+						alert("Renseigner votre type de contact ! ");
+						document.formulaire_js.contact.focus();
+						document.formulaire_js.contact.style.backgroundColor = "orange";
+						document.formulaire_js.contact.style.borderColor = "red";
+						return false;
+					}
+					
+					if (confirm('Voulez-vous vraiment valider le formulaire ?'))
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			
+				
+			</script>
+		
+		</body>
+	</html>
